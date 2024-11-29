@@ -1,0 +1,133 @@
+<style scope='global'>
+  :root {
+    /* Fluid space */
+    --space-3xs: clamp(0.25rem, 0.1rem + 0.76vw, 0.69rem);
+    --space-2xs: clamp(0.5rem, 0.22rem + 1.41vw, 1.31rem);
+    --space-xs: clamp(0.75rem, 0.32rem + 2.17vw, 2rem);
+    --space-s: clamp(1rem, 0.43rem + 2.83vw, 2.63rem);
+    --space-m: clamp(1.5rem, 0.65rem + 4.24vw, 3.94rem);
+    --space-l: clamp(2rem, 0.87rem + 5.65vw, 5.25rem);
+    --space-xl: clamp(3rem, 1.3rem + 8.48vw, 7.88rem);
+    --space-2xl: clamp(4rem, 1.74rem + 11.3vw, 10.5rem);
+    --space-3xl: clamp(5rem, 2.17rem + 14.13vw, 13.13rem);
+  }
+
+  :root {
+    /* Fluid type, bespoke values for landing page before Enhance Styles 5 fluid type*/
+    --text-multiplier: 1;
+    --landing-text-0: clamp(1rem, 0.83rem + 0.87vw, 1.5rem * var(--text-multiplier));
+    --landing-text-1: clamp(1.2rem, 0.83rem + 1.83vw, 2.25rem * var(--text-multiplier));
+    --landing-text-2: clamp(1.44rem, 0.77rem + 3.37vw, 3.38rem * var(--text-multiplier));
+    --landing-text-3: clamp(1.73rem, 0.57rem + 5.8vw, 5.06rem * var(--text-multiplier));
+    --landing-text-4: clamp(2.07rem, 0.15rem + 9.6vw, 7.59rem * var(--text-multiplier));
+    --landing-text-5: clamp(2.49rem, -0.61rem + 15.48vw, 11.39rem * var(--text-multiplier));
+  }
+
+  @media screen and (min-width: 120em) {
+    :root {
+      --text-multiplier: 1.125;
+    }
+  }
+
+  body {
+    background: white;
+  }
+
+  body > *:not(begin-masthead) {
+    font-size: var(--landing-text-0);
+  }
+
+  site-header {
+    --site-header-background: white;
+  }
+
+  .header-wrapper {
+    display: block;
+    background-color: #c9ecff;
+    background-image: linear-gradient(
+      to bottom,
+      hsla(0deg 0% 100% / 0.85),
+      hsla(0deg 0% 100% / 0.35)
+    );
+  }
+
+  landing-intro {
+    z-index: 2;
+  }
+
+  .clouds-purple-section-bottom {
+    aspect-ratio: 1493 / 118;
+    width: 100vw;
+  }
+
+  .ground-top {
+    aspect-ratio: 1514 / 332;
+    width: 100vw;
+  }
+
+  /* ---- SHARED KEYFRAMES ---- */
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    20% {
+      opacity: 0;
+    }
+    21% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+    }
+    81% {
+      opacity: 1;
+    }
+    85% {
+      opacity: 0;
+    }
+    86% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes float-letters {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.015);
+    }
+    75% {
+      transform: scale(0.985);
+    }
+  }
+</style>
+
+<docs-symbols></docs-symbols>
+
+<site-header active="/"></site-header>
+
+<landing-intro class='block relative'></landing-intro>
+
+<landing-cyan-to-indigo class='block relative z1'>
+  <img
+    src="/_public/img/landing/cloud-purple-section-bottom.svg"
+    alt=""
+    class="z1 absolute inset-bs-0 clouds-purple-section-bottom" />
+
+  <landing-swinging-axols></landing-swinging-axols>
+  <landing-no-js-required></landing-no-js-required>
+  <landing-ssr-web-components></landing-ssr-web-components>
+  <landing-progressive-by-design></landing-progressive-by-design>
+</landing-cyan-to-indigo>
+<landing-pink-to-cyan>
+  <landing-stable-forever></landing-stable-forever>
+  <landing-scoped-dom-updates></landing-scoped-dom-updates>
+  <landing-liftoff></landing-liftoff>
+  <img src="/_public/img/landing/ground-top.svg" alt="" class="ground-top" loading="lazy" />
+</landing-pink-to-cyan>
+<landing-the-ground></landing-the-ground>
+<landing-footer></landing-footer>
